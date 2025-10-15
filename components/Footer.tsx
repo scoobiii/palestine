@@ -11,7 +11,7 @@ export const Footer: React.FC = () => {
           {translations.footerConcept}
         </p>
         <p className="text-sm mt-1">
-          © {new Date().getFullYear()} {translations.footerRights}
+          © 2025 {translations.footerRights}
         </p>
       </div>
     </footer>

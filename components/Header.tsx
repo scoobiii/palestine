@@ -31,9 +31,9 @@ const UnityFlags: React.FC = () => {
     );
 };
 
-const NavLink: React.FC<{ href: string; children: React.ReactNode; onClick?: () => void }> = ({ href, children, onClick }) => (
+const NavLink: React.FC<{ children: React.ReactNode; onClick?: () => void }> = ({ children, onClick }) => (
     <button onClick={onClick} className="block py-2 px-3 text-gray-300 rounded-lg hover:bg-gray-700/50 md:hover:bg-transparent md:border-0 md:hover:text-cyan-300 md:p-0 transition-colors duration-200 text-left w-full">
-        <a href={href}>{children}</a>
+        {children}
     </button>
 );
 
@@ -93,8 +93,8 @@ export const Header: React.FC<HeaderProps> = ({ onFeatureClick }) => {
                 <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-700 rounded-lg bg-gray-800/80 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent">
                     {navItems.map((item) => (
                         <li key={item.titleKey}>
-                             <NavLink href="#infraestrutura" onClick={() => handleLinkClick(item)}>
-                                {translations[item.titleKey].split(' ')[0]}
+                             <NavLink onClick={() => handleLinkClick(item)}>
+                                {translations[item.titleShortKey]}
                             </NavLink>
                         </li>
                     ))}

@@ -45,6 +45,7 @@ const EconomyIcon = () => (
 
 export interface Feature {
   titleKey: keyof TranslationSet;
+  titleShortKey: keyof TranslationSet;
   descriptionKey: keyof TranslationSet;
   icon: React.ReactNode;
   promptKey: keyof TranslationSet;
@@ -53,36 +54,42 @@ export interface Feature {
 export const FEATURES: Feature[] = [
   {
     titleKey: 'featureEnergyTitle',
+    titleShortKey: 'featureEnergyTitleShort',
     descriptionKey: 'featureEnergyDesc',
     icon: <EnergyIcon />,
     promptKey: 'featureEnergyPrompt',
   },
   {
     titleKey: 'featureWaterTitle',
+    titleShortKey: 'featureWaterTitleShort',
     descriptionKey: 'featureWaterDesc',
     icon: <WaterIcon />,
     promptKey: 'featureWaterPrompt',
   },
   {
     titleKey: 'featureCommunicationsTitle',
+    titleShortKey: 'featureCommunicationsTitleShort',
     descriptionKey: 'featureCommunicationsDesc',
     icon: <CommsIcon />,
     promptKey: 'featureCommunicationsPrompt',
   },
   {
     titleKey: 'featureHealthTitle',
+    titleShortKey: 'featureHealthTitleShort',
     descriptionKey: 'featureHealthDesc',
     icon: <HealthIcon />,
     promptKey: 'featureHealthPrompt',
   },
   {
     titleKey: 'featureEducationTitle',
+    titleShortKey: 'featureEducationTitleShort',
     descriptionKey: 'featureEducationDesc',
     icon: <EducationIcon />,
     promptKey: 'featureEducationPrompt',
   },
   {
     titleKey: 'featureEconomyTitle',
+    titleShortKey: 'featureEconomyTitleShort',
     descriptionKey: 'featureEconomyDesc',
     icon: <EconomyIcon />,
     promptKey: 'featureEconomyPrompt',

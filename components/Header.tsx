@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FEATURES } from '../constants';
+import { FEATURES, Feature } from '../constants';
 import { useLanguage } from '../contexts/LanguageContext';
 import { LanguageSwitcher } from './LanguageSwitcher';
 
@@ -32,18 +32,32 @@ const UnityFlags: React.FC = () => {
 };
 
 const NavLink: React.FC<{ href: string; children: React.ReactNode; onClick?: () => void }> = ({ href, children, onClick }) => (
-    <a href={href} onClick={onClick} className="block py-2 px-3 text-gray-300 rounded-lg hover:bg-gray-700/50 md:hover:bg-transparent md:border-0 md:hover:text-cyan-300 md:p-0 transition-colors duration-200">
-        {children}
-    </a>
+    <button onClick={onClick} className="block py-2 px-3 text-gray-300 rounded-lg hover:bg-gray-700/50 md:hover:bg-transparent md:border-0 md:hover:text-cyan-300 md:p-0 transition-colors duration-200 text-left w-full">
+        <a href={href}>{children}</a>
+    </button>
 );
 
 // --- Main Header Component ---
+interface HeaderProps {
+    onFeatureClick: (feature: Feature) => void;
+}
 
-export const Header: React.FC = () => {
+export const Header: React.FC<HeaderProps> = ({ onFeatureClick }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { translations } = useLanguage();
 
-  const navItems = FEATURES.slice(0, 5);
+  const navItems = FEATURES;
+
+  const handleLinkClick = (feature: Feature) => {
+    // Scroll to section first
+    const section = document.getElementById('infraestrutura');
+    if(section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+    // Then open modal
+    onFeatureClick(feature);
+    setIsMenuOpen(false);
+  }
 
   return (
     <header className="bg-black bg-opacity-50 backdrop-blur-lg sticky top-0 z-50 shadow-cyan-500/10 shadow-lg">
@@ -79,17 +93,11 @@ export const Header: React.FC = () => {
                 <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-700 rounded-lg bg-gray-800/80 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent">
                     {navItems.map((item) => (
                         <li key={item.titleKey}>
-                             <NavLink href="#infraestrutura" onClick={() => setIsMenuOpen(false)}>
-                                {/* FIX: Improved type safety by using keyof TranslationSet in constants.tsx, removing the need for casting. */}
+                             <NavLink href="#infraestrutura" onClick={() => handleLinkClick(item)}>
                                 {translations[item.titleKey].split(' ')[0]}
                             </NavLink>
                         </li>
                     ))}
-                     <li>
-                        <NavLink href="#infraestrutura" onClick={() => setIsMenuOpen(false)}>
-                            {translations.navMore}
-                        </NavLink>
-                    </li>
                 </ul>
                 <div className="block md:hidden mt-4 pt-4 border-t border-gray-700">
                     <UnityFlags />

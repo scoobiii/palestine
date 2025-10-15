@@ -44,6 +44,24 @@ export interface TranslationSet {
     errorTitle: string;
     errorFallback: string;
 
+    analyticsTitle: string;
+    analyticsSelectorLabel: string;
+    analyticsSelectorOption: string;
+    chartPopulationTitle: string;
+    chartEnergyTitle: string;
+    chartWaterTitle: string;
+    yAxisPopulation: string;
+    legendEnergyGeneration: string;
+    legendEnergyConsumption: string;
+    waterResidential: string;
+    waterFarming: string;
+    waterCommercial: string;
+
+    imageGenerationTitle: string;
+    imageGenerationLoading: string;
+    imageGenerationPlaceholder: string;
+    imageGenerationPromptBase: string;
+
     footerConcept: string;
     footerRights: string;
 }
@@ -56,7 +74,7 @@ export const translations: { [key: string]: TranslationSet } = {
     navMore: "Mais...",
     heroTitle: "Reconstruindo Gaza, Um Bloco de Cada Vez",
     heroSubtitle: "Explorando um plano conceitual para a revitalização da infraestrutura de Gaza através da tecnologia e inovação.",
-    heroAlt: "Vista panorâmica da cidade de Gaza com sobreposições digitais de infraestrutura.",
+    heroAlt: "Visão conceitual de uma cidade vertical futurista com arquitetura sustentável e espaços verdes exuberantes, inspirando o futuro de Gaza.",
     conceptTitle: "O Conceito",
     projectDescription: `Gere uma descrição detalhada e esperançosa para um projeto conceitual chamado 'GAZA: Renascimento Digital'. O projeto imagina um futuro onde a tecnologia de ponta e o planejamento sustentável reconstroem a infraestrutura vital de Gaza. Explique que não é um plano de construção real, mas uma visão para inspirar discussões, demonstrar o potencial da inovação e simbolizar solidariedade. Detalhe como setores críticos (energia, água, comunicações, saúde, educação) são projetados para serem resilientes, sustentáveis e centrados no ser humano, visando criar uma base próspera para futuras gerações.`,
     integratedInfrastructureTitle: "Infraestrutura Integrada",
@@ -83,6 +101,22 @@ export const translations: { [key: string]: TranslationSet } = {
     modalClose: "Fechar",
     errorTitle: "Erro!",
     errorFallback: "Por favor, tente novamente mais tarde.",
+    analyticsTitle: "Análise do Complexo Vertical",
+    analyticsSelectorLabel: "Selecione um Complexo",
+    analyticsSelectorOption: "Complexo Vertical",
+    chartPopulationTitle: "Projeção de Densidade Populacional (por km²)",
+    chartEnergyTitle: "Previsão de Energia (GWh/ano)",
+    chartWaterTitle: "Distribuição do Uso de Água",
+    yAxisPopulation: "Densidade",
+    legendEnergyGeneration: "Geração",
+    legendEnergyConsumption: "Consumo",
+    waterResidential: "Residencial",
+    waterFarming: "Agricultura Vertical",
+    waterCommercial: "Comercial",
+    imageGenerationTitle: "Visualizador Conceitual de Arquitetura",
+    imageGenerationLoading: "Gerando imagem conceitual com IA... Isso pode levar um momento.",
+    imageGenerationPlaceholder: "Selecione um complexo para gerar uma visão arquitetônica.",
+    imageGenerationPromptBase: "Arte conceitual cinematográfica e ultra-realista de um complexo de cidade vertical futurista em uma Gaza reinventada. O complexo tem 600m de altura e 200m de largura, com uma fachada de vidro maciça com filme fotovoltaico integrado. Contém fazendas verticais, usinas sustentáveis de etanol e biodiesel, um data center vertical em nuvem, áreas comerciais multiuso, escolas avançadas e está interconectado com outras torres por meio de pontes suspensas. Na base, há um parque verde exuberante e expansivo com 'rios verticais' fluindo (cascatas descendo por elementos arquitetônicos).",
     footerConcept: "Um projeto conceitual por entusiastas da tecnologia em solidariedade.",
     footerRights: "Todos os direitos reservados.",
   },
@@ -93,7 +127,7 @@ export const translations: { [key: string]: TranslationSet } = {
     navMore: "More...",
     heroTitle: "Rebuilding Gaza, One Block at a Time",
     heroSubtitle: "Exploring a conceptual blueprint for the revitalization of Gaza's infrastructure through technology and innovation.",
-    heroAlt: "Panoramic view of Gaza city with digital overlays of infrastructure.",
+    heroAlt: "Conceptual vision of a futuristic vertical city with sustainable architecture and lush green spaces, inspiring Gaza's future.",
     conceptTitle: "The Concept",
     projectDescription: `Generate a detailed and hopeful description for a conceptual project named 'GAZA: Digital Rebirth'. The project envisions a future where cutting-edge technology and sustainable planning rebuild Gaza's vital infrastructure. Explain that it is not an actual construction plan but a vision to inspire discussion, demonstrate innovation's potential, and symbolize solidarity. Detail how critical sectors (energy, water, communications, health, education) are designed to be resilient, sustainable, and human-centered, aiming to create a thriving foundation for future generations.`,
     integratedInfrastructureTitle: "Integrated Infrastructure",
@@ -120,6 +154,22 @@ export const translations: { [key: string]: TranslationSet } = {
     modalClose: "Close",
     errorTitle: "Error!",
     errorFallback: "Please try again later.",
+    analyticsTitle: "Vertical Complex Analytics",
+    analyticsSelectorLabel: "Select a Complex",
+    analyticsSelectorOption: "Vertical Complex",
+    chartPopulationTitle: "Population Density Projection (per km²)",
+    chartEnergyTitle: "Energy Forecast (GWh/year)",
+    chartWaterTitle: "Water Usage Breakdown",
+    yAxisPopulation: "Density",
+    legendEnergyGeneration: "Generation",
+    legendEnergyConsumption: "Consumption",
+    waterResidential: "Residential",
+    waterFarming: "Vertical Farming",
+    waterCommercial: "Commercial",
+    imageGenerationTitle: "Conceptual Architecture Visualizer",
+    imageGenerationLoading: "Generating conceptual image with AI... This may take a moment.",
+    imageGenerationPlaceholder: "Select a complex to generate an architectural vision.",
+    imageGenerationPromptBase: "An ultra-photorealistic, cinematic concept art of a futuristic vertical city complex in a reimagined Gaza. The complex is 600m high and 200m wide, featuring a massive glass facade with integrated photovoltaic film. It contains vertical farms, sustainable ethanol and biodiesel plants, a vertical cloud data center, multi-use shopping areas, advanced schools, and is interconnected with other towers via sky-bridges. At the base, there is a lush, expansive green park with flowing 'vertical rivers' (waterfalls cascading down architectural elements).",
     footerConcept: "A conceptual project by tech enthusiasts in solidarity.",
     footerRights: "All rights reserved.",
   },
@@ -130,7 +180,7 @@ export const translations: { [key: string]: TranslationSet } = {
     navMore: "المزيد...",
     heroTitle: "إعادة بناء غزة، لبنة لبنة",
     heroSubtitle: "استكشاف مخطط مفاهيمي لتنشيط البنية التحتية في غزة من خلال التكنولوجيا والابتكار.",
-    heroAlt: "منظر بانورامي لمدينة غزة مع تراكبات رقمية للبنية التحتية.",
+    heroAlt: "رؤية مفاهيمية لمدينة عمودية مستقبلية ذات هندسة معمارية مستدامة ومساحات خضراء مورقة، تلهم مستقبل غزة.",
     conceptTitle: "المفهوم",
     projectDescription: `أنشئ وصفًا مفصلاً ومفعمًا بالأمل لمشروع مفاهيمي يسمى 'غزة: ولادة رقمية جديدة'. يتصور المشروع مستقبلاً حيث تعيد التكنولوجيا المتطورة والتخطيط المستدام بناء البنية التحتية الحيوية في غزة. اشرح أنها ليست خطة بناء فعلية ولكنها رؤية لإلهام النقاش وإظهار إمكانات الابتكار وترميز التضامن. فصّل كيف تم تصميم القطاعات الحيوية (الطاقة، المياه، الاتصالات، الصحة، التعليم) لتكون مرنة ومستدامة ومتمحورة حول الإنسان، بهدف خلق أساس مزدهر للأجيال القادمة.`,
     integratedInfrastructureTitle: "البنية التحتية المتكاملة",
@@ -157,6 +207,22 @@ export const translations: { [key: string]: TranslationSet } = {
     modalClose: "إغلاق",
     errorTitle: "خطأ!",
     errorFallback: "يرجى المحاولة مرة أخرى في وقت لاحق.",
+    analyticsTitle: "تحليلات المجمع العمودي",
+    analyticsSelectorLabel: "اختر مجمعًا",
+    analyticsSelectorOption: "المجمع العمودي",
+    chartPopulationTitle: "إسقاط الكثافة السكانية (لكل كيلومتر مربع)",
+    chartEnergyTitle: "توقعات الطاقة (جيجاوات ساعة/سنة)",
+    chartWaterTitle: "توزيع استخدام المياه",
+    yAxisPopulation: "الكثافة",
+    legendEnergyGeneration: "الإنتاج",
+    legendEnergyConsumption: "الاستهلاك",
+    waterResidential: "سكني",
+    waterFarming: "زراعة عمودية",
+    waterCommercial: "تجاري",
+    imageGenerationTitle: "متخيل العمارة المفاهيمي",
+    imageGenerationLoading: "جاري إنشاء صورة مفاهيمية بالذكاء الاصطناعي... قد يستغرق هذا بعض الوقت.",
+    imageGenerationPlaceholder: "اختر مجمعًا لإنشاء رؤية معمارية.",
+    imageGenerationPromptBase: "فن مفاهيمي سينمائي واقعي للغاية لمجمع مدينة عمودي مستقبلي في غزة متخيلة. يبلغ ارتفاع المجمع 600 متر وعرضه 200 متر، ويتميز بواجهة زجاجية ضخمة مع فيلم ضوئي مدمج. يحتوي على مزارع عمودية، ومصانع إيثانول وديزل حيوي مستدامة، ومركز بيانات سحابي عمودي، ومناطق تسوق متعددة الاستخدامات، ومدارس متطورة، وهو متصل بأبراج أخرى عبر جسور سماوية. عند القاعدة، توجد حديقة خضراء مورقة وواسعة مع 'أنهار عمودية' متدفقة (شلالات تتساقط على العناصر المعمارية).",
     footerConcept: "مشروع مفاهيمي من قبل عشاق التكنولوجيا تضامناً.",
     footerRights: "كل الحقوق محفوظة.",
   },

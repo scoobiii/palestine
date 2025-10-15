@@ -6,12 +6,13 @@ import { FeaturesGrid } from './components/FeaturesGrid';
 import { FeatureModal } from './components/FeatureModal';
 import { Footer } from './components/Footer';
 import { ErrorDisplay } from './components/ErrorDisplay';
+import DataVisualization from './components/DataVisualization';
 import { Feature } from './constants';
 import { useLanguage } from './contexts/LanguageContext';
 import { generateContent } from './services/geminiService';
 
-// Using a placeholder image from an external service for demonstration
-const HERO_IMAGE_URL = "https://images.unsplash.com/photo-1566234399992-3c0356193766?q=80&w=2070&auto=format&fit=crop";
+// A dynamic video showcasing a futuristic city with interconnected towers
+const HERO_VIDEO_URL = "https://videos.pexels.com/video-files/8343141/8343141-hd_1920_1080_25fps.mp4";
 
 const App: React.FC = () => {
   const [selectedFeature, setSelectedFeature] = useState<Feature | null>(null);
@@ -58,10 +59,10 @@ const App: React.FC = () => {
         className="fixed top-0 left-0 w-full h-full bg-cover bg-center -z-10"
         style={{ backgroundImage: "url('/background-grid.svg')", opacity: 0.1 }}
       />
-      <Header />
+      <Header onFeatureClick={handleFeatureClick} />
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="space-y-16 sm:space-y-24">
-          <Hero imageUrl={HERO_IMAGE_URL} />
+          <Hero videoUrl={HERO_VIDEO_URL} />
           {isLoading ? (
              <div className="flex justify-center items-center h-40">
                 <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-cyan-400"></div>
@@ -72,6 +73,7 @@ const App: React.FC = () => {
             <ProjectDescription text={projectDescription} />
           )}
           <FeaturesGrid onFeatureClick={handleFeatureClick} />
+          <DataVisualization />
         </div>
       </main>
       <Footer />

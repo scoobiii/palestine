@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
 import { generateArchitecturalImage } from '../services/geminiService';
+import { generateComplexData } from '../utils/mockData';
 
 // --- Helper Components ---
 
@@ -35,6 +36,7 @@ export const ImageGenerator: React.FC = () => {
     const [error, setError] = useState<string | null>(null);
 
     const complexOptions = useMemo(() => Array.from({ length: 50 }, (_, i) => i + 1), []);
+    const complexData = useMemo(() => generateComplexData(selectedComplex), [selectedComplex]);
 
     // Arrays of modifiers to create unique prompts
     const styles = useMemo(() => ['biomorphic design', 'sleek minimalist architecture', 'deconstructivist style', 'parametricism', 'neo-futurism', 'arcology concept'], []);
@@ -46,6 +48,7 @@ export const ImageGenerator: React.FC = () => {
         if (isVisible && !cachedImages[selectedComplex]) {
             handleGenerateImage();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [selectedComplex, isVisible]);
 
     const handleGenerateImage = async () => {
@@ -58,9 +61,16 @@ export const ImageGenerator: React.FC = () => {
             const style = styles[selectedComplex % styles.length];
             const lighting = lightings[selectedComplex % lightings.length];
             const atmosphere = atmospheres[selectedComplex % atmospheres.length];
-            const dynamicPrompt = `${translations.imageGenerationPromptBase}, in the style of ${style}, captured ${lighting}, ${atmosphere}.`;
             
-            const base64Image = await generateArchitecturalImage(dynamicPrompt);
+            // FIX: Argument of type 'string' is not assignable to parameter of type 'ArchitecturalImageParams'.
+            // The `generateArchitecturalImage` function expects an object with specific properties, not just a prompt string.
+            const base64Image = await generateArchitecturalImage({
+                basePrompt: translations.imageGenerationPromptBase,
+                complexData: complexData,
+                style: style,
+                lighting: lighting,
+                atmosphere: atmosphere,
+            });
             setCachedImages(prev => ({ ...prev, [selectedComplex]: `data:image/jpeg;base64,${base64Image}` }));
         } catch (err) {
             if (err instanceof Error) {

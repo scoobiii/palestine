@@ -78,9 +78,15 @@ const DataVisualization: React.FC = () => {
             const style = styles[selectedComplex % styles.length];
             const lighting = lightings[selectedComplex % lightings.length];
             const atmosphere = atmospheres[selectedComplex % atmospheres.length];
-            const dynamicPrompt = `${translations.imageGenerationPromptBase}, incorporating data-driven elements: a population density of ${complexData.populationData[complexData.populationData.length - 1].density} per km² and sustainable energy generation of ${Math.round(complexData.energyData[0].generation)} GWh/year. The architectural style is ${style}, captured ${lighting}, ${atmosphere}.`;
             
-            const base64Image = await generateArchitecturalImage(dynamicPrompt);
+            const base64Image = await generateArchitecturalImage({
+                basePrompt: translations.imageGenerationPromptBase,
+                complexData: complexData,
+                style: style,
+                lighting: lighting,
+                atmosphere: atmosphere,
+            });
+
             setCachedImages(prev => ({ ...prev, [selectedComplex]: `data:image/jpeg;base64,${base64Image}` }));
         } catch (err) {
             if (err instanceof Error) {

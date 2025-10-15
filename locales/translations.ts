@@ -43,6 +43,11 @@ export interface TranslationSet {
     featureEconomyDesc: string;
     featureEconomyPrompt: string;
 
+    featureFinanceTitle: string;
+    featureFinanceTitleShort: string;
+    featureFinanceDesc: string;
+    featureFinancePrompt: string;
+
     modalTitle: string;
     modalAITitle: string;
     modalClose: string;
@@ -108,6 +113,10 @@ export const translations: { [key: string]: TranslationSet } = {
     featureEconomyTitleShort: "Economia",
     featureEconomyDesc: "Hubs de tecnologia e plataformas de e-commerce para impulsionar o crescimento local.",
     featureEconomyPrompt: "Gere uma análise técnica detalhada sobre um plano conceitual para a 'Economia Digital' em Gaza. Descreva a criação de hubs de tecnologia e espaços de coworking, uma plataforma de e-commerce nacional para conectar produtores locais a mercados globais e programas de treinamento intensivo para qualificar a força de trabalho.",
+    featureFinanceTitle: "Viabilidade Econômica",
+    featureFinanceTitleShort: "Finanças",
+    featureFinanceDesc: "Análise de CAPEX, OPEX, ROI e projeções de crescimento para um futuro próspero.",
+    featureFinancePrompt: "Gere uma análise detalhada de viabilidade financeira e econômica para o projeto conceitual 'GAZA: Renascimento Digital'. A análise deve cobrir: 1. **CAPEX:** Estimativa de despesas de capital para os 50 complexos verticais. 2. **OPEX:** Estimativa de despesas operacionais anuais. 3. **ROI:** Retorno sobre o investimento projetado e período de payback. 4. **Cronograma Físico-Financeiro:** Uma linha do tempo de alto nível de 2025 a 2040, descrevendo as principais fases de investimento e marcos de construção. 5. **Projeção de Renda Per Capita:** Uma projeção do crescimento da renda per capita em Gaza de 2025 a 2040, impulsionada por este projeto, com a meta ambiciosa de ultrapassar US$100.000. 6. **Meta Net Zero:** Detalhe a estratégia para Gaza se tornar o primeiro território 'Net Zero', integrando essa meta ao modelo financeiro. Apresente as informações em um tom estruturado, otimista e inspirador, adequado para uma proposta conceitual.",
     modalTitle: "Análise Conceitual",
     modalAITitle: "Descrição Gerada por IA",
     modalClose: "Fechar",
@@ -167,6 +176,10 @@ export const translations: { [key: string]: TranslationSet } = {
     featureEconomyTitleShort: "Economy",
     featureEconomyDesc: "Tech hubs and e-commerce platforms to boost local growth.",
     featureEconomyPrompt: "Generate a detailed technical analysis for a conceptual plan for the 'Digital Economy' in Gaza. Describe the creation of tech hubs and co-working spaces, a national e-commerce platform to connect local producers to global markets, and intensive training programs to upskill the workforce.",
+    featureFinanceTitle: "Economic Viability",
+    featureFinanceTitleShort: "Finance",
+    featureFinanceDesc: "Analysis of CAPEX, OPEX, ROI, and growth projections for a prosperous future.",
+    featureFinancePrompt: "Generate a detailed financial and economic viability analysis for the 'GAZA: Digital Rebirth' conceptual project. The analysis should cover: 1. **CAPEX:** Estimated capital expenditure for the 50 vertical complexes. 2. **OPEX:** Estimated annual operational expenditure. 3. **ROI:** Projected return on investment and payback period. 4. **Physical-Financial Schedule:** A high-level timeline from 2025 to 2040, outlining key investment phases and construction milestones. 5. **Per Capita Income Projection:** A projection of per capita income growth in Gaza from 2025 to 2040, driven by this project, with the ambitious goal of reaching over $100,000. 6. **Net Zero Goal:** Detail the strategy for Gaza to become the first 'Net Zero' territory, integrating this goal into the financial model. Present the information in a structured, optimistic, and inspiring tone, suitable for a conceptual proposal.",
     modalTitle: "Conceptual Analysis",
     modalAITitle: "AI-Generated Description",
     modalClose: "Close",
@@ -226,6 +239,10 @@ export const translations: { [key: string]: TranslationSet } = {
     featureEconomyTitleShort: "الاقتصاد",
     featureEconomyDesc: "مراكز تقنية ومنصات تجارة إلكترونية لتعزيز النمو المحلي.",
     featureEconomyPrompt: "أنشئ تحليلاً فنياً مفصلاً لخطة مفاهيمية لـ 'الاقتصاد الرقمي' في غزة. صف إنشاء مراكز تقنية ومساحات عمل مشتركة، ومنصة تجارة إلكترونية وطنية لربط المنتجين المحليين بالأسواق العالمية، وبرامج تدريب مكثفة لرفع مهارات القوى العاملة.",
+    featureFinanceTitle: "الجدوى الاقتصادية",
+    featureFinanceTitleShort: "المالية",
+    featureFinanceDesc: "تحليل للنفقات الرأسمالية والتشغيلية، وعائد الاستثمار، وتوقعات النمو لمستقبل مزدهر.",
+    featureFinancePrompt: "أنشئ تحليلاً مفصلاً للجدوى المالية والاقتصادية لمشروع 'غزة: ولادة رقمية جديدة' المفاهيمي. يجب أن يغطي التحليل: 1. **النفقات الرأسمالية (CAPEX):** تقدير للنفقات الرأسمالية للمجمعات العمودية الخمسين. 2. **النفقات التشغيلية (OPEX):** تقدير للنفقات التشغيلية السنوية. 3. **عائد الاستثمار (ROI):** توقعات عائد الاستثمار وفترة الاسترداد. 4. **الجدول الزمني المادي والمالي:** جدول زمني عالي المستوى من 2025 إلى 2040، يوضح مراحل الاستثمار الرئيسية ومعالم البناء. 5. **توقعات دخل الفرد:** توقعات لنمو دخل الفرد في غزة من 2025 إلى 2040، مدفوعًا بهذا المشروع، مع الهدف الطموح المتمثل في تجاوز 100,000 دولار أمريكي. 6. **هدف صافي الانبعاثات الصفري (Net Zero):** تفصيل استراتيجية غزة لتصبح أول إقليم 'صافي انبعاثاته صفر'، مع دمج هذا الهدف في النموذج المالي. قدم المعلومات بأسلوب منظم ومتفائل وملهم، مناسب لمقترح مفاهيمي.",
     modalTitle: "تحليل مفاهيمي",
     modalAITitle: "وصف تم إنشاؤه بواسطة الذكاء الاصطناعي",
     modalClose: "إغلاق",
